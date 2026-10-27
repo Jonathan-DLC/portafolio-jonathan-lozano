@@ -46,3 +46,9 @@ funden.
 - LinkedIn, correo y CV de Jonathan.
 - El repositorio público de Sistema Académico; mientras tanto el enlace apunta a su perfil.
 - Imagen para compartir el enlace en redes (`og:image`).
+
+## Créditos
+
+Portafolio de [Jonathan Lozano](https://github.com/Jonathan-DLC).
+[dony](https://github.com/dony-aep) ayudó a proponer la idea de la cinta VHS y a llevarla a
+código.
