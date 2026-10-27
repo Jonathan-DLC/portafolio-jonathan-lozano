@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/* Paleta de la marca personal (docs/pdf-portafolio-marcapersonal.pdf):
+   fondo medianoche, texto blanco humo y acentos cian y naranja neón.
+   El magenta solo aparece en la aberración cromática de la cinta. */
+@theme {
+  --color-void: #05060a;
+  --color-night: #0b0f19;
+  --color-panel: #161f30;
+  --color-tape: #14151b;
+  --color-ink: #f8fafc;
+  --color-dim: #94a3b8;
+  --color-signal: #00f0ff;
+  --color-ember: #ff6b00;
+  --color-glow: #f59e0b;
+  --color-flare: #ff2e88;
+  --color-brake: #ff3b30;
+  --color-label: #ece7da;
+
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-vhs: "VT323", ui-monospace, monospace;
+  --font-marker: "Permanent Marker", cursive;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --animate-blink: blink 1s steps(1) infinite;
+
+  @keyframes blink {
+    0%,
+    49% {
+      opacity: 1;
+    }
+    50%,
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+@utility text-chroma {
+  text-shadow:
+    -3px 0 rgb(255 46 136 / 0.8),
+    3px 0 rgb(0 240 255 / 0.8);
+}
+
+@utility text-chroma-soft {
+  text-shadow:
+    -1px 0 rgb(255 46 136 / 0.55),
+    1px 0 rgb(0 240 255 / 0.55);
+}
+
+@layer base {
+  html {
+    background: var(--color-void);
+    color-scheme: dark;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-void);
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--color-signal);
+    outline-offset: 4px;
+  }
+}
