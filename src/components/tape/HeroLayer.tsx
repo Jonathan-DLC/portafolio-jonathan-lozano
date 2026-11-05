@@ -14,7 +14,7 @@ export function HeroLayer() {
       id="inicio"
       data-tape="layer-hero"
       aria-label="Inicio"
-      className="absolute inset-0 z-[4] overflow-hidden bg-night"
+      className="absolute inset-0 z-[5] overflow-hidden bg-night"
     >
       {/* La intro enciende este contenedor y el scroll apaga la sección: si animaran el mismo
           elemento, un scroll durante la intro dejaría guardado un estado a medio encender. */}

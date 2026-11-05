@@ -1,8 +1,8 @@
 export interface Project {
   name: string
   stack: string[]
-  /** Versión publicada; `null` si el proyecto solo corre en local. */
-  demo: string | null
+  /** Versión publicada. Todos los proyectos la necesitan para el botón «Visitar». */
+  demo: string
   code: string
   /** Color de la franja del casete. */
   color: string
@@ -17,11 +17,10 @@ export const projects: Project[] = [
     color: 'var(--color-signal)',
   },
   {
-    name: 'Sistema Académico',
-    stack: ['Angular', 'PHP', 'MySQL'],
-    demo: null,
-    // El repositorio no está público en la cuenta de Jonathan; mientras tanto apunta al perfil.
-    code: 'https://github.com/Jonathan-DLC',
+    name: 'Juegosdiarios.gg',
+    stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'EmulatorJS'],
+    demo: 'https://juegosdiarios-gg.vercel.app',
+    code: 'https://github.com/Jonathan-DLC/Juegosdiarios.gg',
     color: 'var(--color-glow)',
   },
   {

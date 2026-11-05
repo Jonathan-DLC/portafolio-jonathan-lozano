@@ -1,7 +1,7 @@
 import { gsap } from '@/lib/gsap'
 
 export type TapeMode = 'PLAY ▶' | 'FF ▶▶' | 'REW ◀◀' | 'STOP ■'
-export type Chapter = 'Inicio' | 'Sobre mí' | 'Proyectos' | 'Contacto'
+export type Chapter = 'Inicio' | 'Sobre mí' | 'Proyectos' | 'Habilidades' | 'Contacto'
 
 type Select = (selector: string) => Element[]
 
@@ -80,9 +80,10 @@ export function buildTapeTimeline(q: Select, track: Element, calm: boolean) {
   const [hero] = q('[data-tape="layer-hero"]')
   const [about] = q('[data-tape="layer-about"]')
   const [work] = q('[data-tape="layer-projects"]')
+  const [skills] = q('[data-tape="layer-skills"]')
   const [contact] = q('[data-tape="layer-contact"]')
   const [line] = q('[data-tape="line"]')
-  gsap.set([about, work, contact], { autoAlpha: 0 })
+  gsap.set([about, work, skills, contact], { autoAlpha: 0 })
 
   const tape = gsap.timeline({
     scrollTrigger: { trigger: track, start: 'top top', end: 'bottom bottom', scrub: 0.6 },
@@ -126,8 +127,15 @@ export function buildTapeTimeline(q: Select, track: Element, calm: boolean) {
   tape.from(q('[data-tape="cassette"]'), { xPercent: 110, duration: 0.6, stagger: 0.35, ease: 'power2.out' })
   tape.addLabel('projects')
   hold(0.8)
-  tape.addLabel('toContact')
+  tape.addLabel('toSkills')
   switchOff(work)
+  switchOn(skills)
+  // Los casetes de habilidades entran desde abajo, como una cinta que se mete en la videocasetera.
+  tape.from(q('[data-tape="skill-case"]'), { yPercent: 130, duration: 0.6, stagger: 0.3, ease: 'power2.out' })
+  tape.addLabel('skills')
+  hold(0.8)
+  tape.addLabel('toContact')
+  switchOff(skills)
   switchOn(contact)
   tape.addLabel('contact')
   hold(0.6)
@@ -138,6 +146,7 @@ export function chapterAt(tape: gsap.core.Timeline, progress: number): Chapter {
   const time = progress * tape.duration()
   if (time < tape.labels.toAbout) return 'Inicio'
   if (time < tape.labels.toProjects) return 'Sobre mí'
-  if (time < tape.labels.toContact) return 'Proyectos'
+  if (time < tape.labels.toSkills) return 'Proyectos'
+  if (time < tape.labels.toContact) return 'Habilidades'
   return 'Contacto'
 }

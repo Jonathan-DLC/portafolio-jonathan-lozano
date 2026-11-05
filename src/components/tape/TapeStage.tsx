@@ -14,12 +14,14 @@ import { ContactLayer } from './ContactLayer'
 import { HeroLayer } from './HeroLayer'
 import { Osd } from './Osd'
 import { ProjectsLayer } from './ProjectsLayer'
+import { SkillsLayer } from './SkillsLayer'
 import { TapeDefs } from './TapeDefs'
 import { VhsOverlay } from './VhsOverlay'
 
 const SKIP_TARGETS = [
   { label: 'Ir a Sobre mí', timelineLabel: 'about' },
   { label: 'Ir a Proyectos', timelineLabel: 'projects' },
+  { label: 'Ir a Habilidades', timelineLabel: 'skills' },
   { label: 'Ir a Contacto', timelineLabel: 'contact' },
 ]
 
@@ -110,9 +112,10 @@ export function TapeStage() {
         ))}
       </nav>
 
-      <div ref={trackRef} className="relative h-[600svh]">
+      <div ref={trackRef} className="relative h-[700svh]">
         <div className="sticky top-0 h-svh min-h-[560px] overflow-hidden bg-void">
           <ContactLayer />
+          <SkillsLayer />
           <ProjectsLayer />
           <AboutLayer />
           <HeroLayer />

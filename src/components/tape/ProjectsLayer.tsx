@@ -9,7 +9,7 @@ export function ProjectsLayer() {
       id="proyectos"
       data-tape="layer-projects"
       aria-labelledby="proyectos-titulo"
-      className="absolute inset-0 z-[2] flex items-center bg-night"
+      className="absolute inset-0 z-[3] flex items-center bg-night"
     >
       <div className="mx-auto w-full max-w-[1180px] px-[clamp(20px,5vw,64px)]">
         <h2
@@ -33,11 +33,9 @@ export function ProjectsLayer() {
                 <p className="m-0 font-mono text-[13px]">{project.stack.join(' · ')}</p>
               </div>
               <div className="flex flex-none items-center gap-2.5 px-[18px] py-3">
-                {project.demo && (
-                  <a className={buttonClass} href={project.demo} target="_blank" rel="noreferrer">
-                    ▶ Visitar
-                  </a>
-                )}
+                <a className={buttonClass} href={project.demo} target="_blank" rel="noreferrer">
+                  ▶ Visitar
+                </a>
                 <a className={buttonClass} href={project.code} target="_blank" rel="noreferrer">
                   Código
                 </a>
