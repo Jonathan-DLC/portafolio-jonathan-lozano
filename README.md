@@ -22,7 +22,7 @@ Un cambio está listo cuando `npm run lint` y `npm run build` pasan.
 
 | Ruta | Contenido |
 | --- | --- |
-| `src/data/profile.ts` | Nombre, rol, texto de «Sobre mí» con el tono de cada fragmento y enlaces de contacto. Un enlace en `null` aparece como pendiente. |
+| `src/data/profile.ts` | Nombre, rol, texto de «Sobre mí» con el tono de cada fragmento y enlaces de contacto. |
 | `src/data/projects.ts` | Proyectos con su stack, demo y repositorio. Todos necesitan demo para el botón «Visitar». |
 | `src/data/skills.ts` | Habilidades agrupadas en Frontend, Backend y datos, y Flujo de trabajo. |
 | `src/components/tape/` | Una capa por sección (`HeroLayer`, `AboutLayer`, `ProjectsLayer`, `SkillsLayer`, `ContactLayer`), el OSD con el monograma JL, los efectos VHS y `TapeStage`, que las monta. |
@@ -42,9 +42,8 @@ uno, un scroll durante la intro dejaría el hero apagado al volver arriba.
 Con «reducir movimiento» activado en el sistema no hay intro ni bucles, y las capas solo se
 funden.
 
-## Pendiente
+## Por hacer
 
-- LinkedIn, correo y CV de Jonathan.
 - Imagen para compartir el enlace en redes (`og:image`).
 
 ## Créditos

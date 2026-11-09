@@ -19,23 +19,18 @@ export function ContactLayer() {
           <p className="mt-3 mb-0 font-vhs text-[26px] text-dim">{profile.role}</p>
         </div>
         <nav aria-label="Contacto" className="flex flex-col gap-1.5 font-vhs text-[clamp(26px,2.6vw,34px)]">
-          {profile.links.map((link) =>
-            link.href ? (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noreferrer"
-                className={`no-underline transition-colors hover:text-signal ${link.accent ? 'text-ember' : 'text-ink'}`}
-              >
-                {link.label} ↗
-              </a>
-            ) : (
-              <span key={link.label} className="text-dim">
-                {link.label} <span className="text-[0.7em]">(pendiente)</span>
-              </span>
-            ),
-          )}
+          {profile.links.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              target={link.href.startsWith('mailto:') ? undefined : '_blank'}
+              rel="noreferrer"
+              download={link.download ? 'CV_Jonathan_Lozano.pdf' : undefined}
+              className={`no-underline transition-colors hover:text-signal ${link.accent ? 'text-ember' : 'text-ink'}`}
+            >
+              {link.label} ↗
+            </a>
+          ))}
         </nav>
       </div>
     </footer>

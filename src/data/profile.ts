@@ -1,8 +1,8 @@
 export interface ContactLink {
   label: string
-  /** `null` mientras Jonathan no comparta el dato; se muestra como pendiente. */
-  href: string | null
+  href: string
   accent?: boolean
+  download?: boolean
 }
 
 /**
@@ -18,9 +18,9 @@ export interface AboutSegment {
 
 const links: ContactLink[] = [
   { label: 'GitHub', href: 'https://github.com/Jonathan-DLC' },
-  { label: 'LinkedIn', href: null },
-  { label: 'Correo', href: null },
-  { label: 'Descargar CV', href: null, accent: true },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/jonathan-david-lozano-calderon-developer-full-stack/' },
+  { label: 'Correo', href: 'mailto:jonathandavidlozano583@gmail.com' },
+  { label: 'Descargar CV', href: `${import.meta.env.BASE_URL}CV_Jonathan_Lozano.pdf`, accent: true, download: true },
 ]
 
 // Versión corta del «Sobre mí» del documento de marca personal: la profesora pidió menos texto.
